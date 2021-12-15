@@ -1,4 +1,4 @@
-package srv.server;
+package server.server;
 
 
 public class App 

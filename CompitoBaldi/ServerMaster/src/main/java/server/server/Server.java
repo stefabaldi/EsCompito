@@ -1,4 +1,5 @@
-package srv.server;
+package server.server;
+
 import java.io.*;
 import java.net.InetAddress;
 import java.net.ServerSocket;
@@ -18,7 +19,7 @@ public class Server
         
     }
     public Socket attendi()
-    {//NON SI TOCCA
+    {
         try 
         {
 
@@ -51,8 +52,6 @@ public class Server
         
         
 
-        
-
         if(Biglietti>0)
         {
             if(StringRV.equals("D"))
@@ -62,8 +61,10 @@ public class Server
             }
             else if(StringRV.equals("A"))
             {
-                StringMD=" Biglietto acquistato ";
                 Biglietti--;
+                StringMD=" Biglietto acquistato, Sono rimasti "+Biglietti+" biglietti "+'\n';
+                
+
                 outVersoClient.writeBytes(StringMD+'\n');
             }
         }
